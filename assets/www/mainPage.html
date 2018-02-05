@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+		<link rel="stylesheet" type="text/css" href="css/mainPage.css" />
+		<title>AceleHw</title>
+	</head>
+	<body>
+		<div id="menu">
+			<div id="menuContent">
+				<div id="menuHeader">
+					<div id="nameIcon">
+						<img src="img/icon.png" id="headerIcon">
+						<div id="name"></div>
+					</div>
+					<div id="numbers">
+					</div>
+				</div>
+
+				<a href="javascript:menuFunctions.menuContent('0');" class="menuSelection">
+					Pantalla principal
+				</a>
+
+				<a href="javascript:menuFunctions.menuContent('1');" class="menuSelection">
+					Sobre la aplicación
+				</a>
+
+				<a href="javascript:menuFunctions.menuContent('2');" id="lastLink" class="menuSelection">
+					Contacto
+				</a>
+
+				<p id="version">FallApp para Android v1.0.0</p>
+			</div>
+		</div>
+
+
+		<div id="mainWindow">
+			<div id="swypeRight"></div>
+
+			<div id="darken" class="notShowDarken"></div>
+
+			<div id="windowHeader">
+				<a href="javascript:menuFunctions.menu();" id="menuLink">
+						<div id="hamburger">
+							<div class="hamburgerLine"></div>
+							<div class="hamburgerLine"></div>
+							<div class="hamburgerLine"></div>
+						</div>
+
+						<div id="menuText">Menú</div>
+				</a>
+
+				<a href="javascript:menuFunctions.menuContent('0');" id="backMain" class="notShow">
+					A pantalla principal
+				</a>
+			</div>
+			
+			<div id="contentContainer">
+				<div id="promptBox" class="notShow">
+					<p>Escoge el nuevo valor de la sensibilidad</p>
+
+					<input type="range" id="sensibilityRange" step="25" min="0" max="100" onchange="functionality.updateRangeText(this.value)"/>
+					<p>Valor: <span id="sensibilityValue">50</span></p>
+					<div class="promptButtons">
+						<a href="javascript:functionality.cancel('promptBox');">Cancelar</a>
+
+						<a href="javascript:functionality.sensibilityOK();">Aceptar</a>
+					</div>
+				</div>
+
+				<div id="telBox" class="notShow">
+					<p>Escribe o modifica los nuevos números a continuación:</p>
+					<input type="tel" class="number inputBorder topMargin notShow" maxlength="9"/>
+					<input type="tel" class="number inputBorder topMargin notShow" maxlength="9"/>
+					<input type="tel" class="number inputBorder topMargin notShow" maxlength="9"/>
+					<input type="tel" class="number inputBorder topMargin notShow" maxlength="9"/>
+					<input type="tel" class="number inputBorder topMargin notShow" maxlength="9"/>
+
+					<div id="telError" class="error notShow">
+						<div id="telErrorText" class="errorText"></div>
+					</div>
+
+					<div class="promptButtons topMargin">
+						<a href="javascript:functionality.telCancel();">Cancelar</a>
+
+						<a href="javascript:functionality.telOK();">Aceptar</a>
+					</div>
+				</div>
+
+				<div id="alertConfirmation" class="notShow">
+					<p>Estás a punto de enviar las alertas de caída. ¿Estás seguro?</p>
+
+					<div class="promptButtons">
+						<a href="javascript:functionality.cancel('alertConfirmation');">No</a>
+
+						<a href="javascript:functionality.alertOK();">Sí</a>
+					</div>
+				</div>
+
+      			<div id="content">
+      				<div id="mainContent" class="selection">
+      					<div class="mainElementsContainer">
+							<a href="javascript:functionality.changeSensibility()" class="mainElements">
+								Cambiar sensibilidad
+							</a>
+						</div>
+      					<div class="mainElementsContainer">
+							<a href="javascript:functionality.changeNumbers();" class="mainElements">
+								Cambiar números de contacto
+							</a>
+						</div>
+						<div class="mainElementsContainer">
+							<a href="javascript:functionality.stopStartService();" class="mainElements" id="stopStart">
+								Parar detección de caídas
+							</a>
+						</div>
+						<div class="mainElementsContainer">
+							<a href="javascript:functionality.sendAlert();" class="mainElements">
+								Enviar alertas
+							</a>
+						</div>
+      				</div>
+
+      				<div id="aboutContent" class="content selection notShow">
+						<div id="scrollContent">
+							<p>La aplicación FallApp es el Trabajo Fin de Grado del alumno cuyos datos se muestran a continuación:</p>
+							<p>Marco Martínez Ávila</p>
+							<p>76964701P</p>
+							<p>UO226111@uniovi.es</p>
+							<p>Grado en Tecnologías y Servicios de la Telecomunicación</p>
+
+							<p>FallApp es una aplicación Android que monitoriza tus movimientos
+								para determinar cuándo se produce una caída. En ese momento, enviará
+								automáticamente mensajes de alerta a los números que configures.
+								¡Esperemos que no haga falta!<br><br>
+							<strong>La persona que originó la idea para esta aplicación:</strong></p>
+
+							<img src="img/aboutPicture.jpg" id="tito">
+						</div>
+					</div>
+
+					<div id="contactContent" class="content selection notShow">
+						<p>Puedes contactar conmigo para cualquier duda, queja o sugerencia utilizando los siguientes medios:</p>
+						<p>Correo: marcomartinezavila@gmail.com</p>
+						<p>Teléfono: 696619477 - 985724178</p>
+						<p>Fax: 985724179</p>
+					</div>
+				</div>
+	  		</div>
+		</div>
+        <script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript" src="js/fastclick.js"></script>
+		<script type="text/javascript" src="js/iscroll-lite.js"></script>
+        <script type="text/javascript" src="js/mainPage.js"></script>
+	</body>
+</html>

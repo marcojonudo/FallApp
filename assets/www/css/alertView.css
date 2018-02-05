@@ -1,0 +1,108 @@
+* {
+	-webkit-user-select: none;
+	font-size: x-large;
+}
+
+body {
+	font-family: smartTipography;
+	font-size: 1.2em;
+	height:100%;
+	width:100%;
+	padding:0;
+	margin:0;
+	border:0;
+	position: fixed;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	-webkit-touch-callout: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/*---------------------------------------*/
+
+#windowHeader {
+	width: 100%;
+	height: 1.5cm;
+	position: absolute;
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #A22026;
+	color: white;
+	font-size: 1.5em;
+}
+
+/*---------------------------------------*/
+
+#mainWindow {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+#contentContainer {
+	width: 100%;
+	height: calc(100% - 3cm);
+	position: absolute;
+	top: 1.5cm;
+	border-top: 1px solid #A22026;
+}
+
+#content {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: stretch;
+}
+
+.mainElementsContainer {
+	position: relative;
+	flex-grow: 1;
+	border-top: 1px solid #A22026;
+	background-image: url(../img/backgroundTexture.jpg);
+}
+
+.mainElementsContainer:first-of-type {
+	border-top: 0;
+}
+
+.mainElements {
+	position: absolute;
+	top: 3vh;
+	bottom: 3vh;
+	left: 3vh;
+	right: 3vh;
+	border: 3px solid #A22026;
+	background-color: #F5CED0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.5em;
+}
+
+#windowFooter {
+	width: 100%;
+	height: 1.5cm;
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #A22026;
+	color: white;
+}
+
+/*---------------------------------------*/
+
+@font-face {
+	font-family: smartTipography;
+	src: url(../fonts/GeosansLight.ttf) format("truetype");
+}

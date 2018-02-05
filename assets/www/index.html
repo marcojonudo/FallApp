@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<title>Asistente de configuración</title>
+	</head>
+	<body>
+    	<div id="header">
+    		<a href="javascript:sliderFunctions.back();" id="back" class="opacity01">Atrás</a>
+    		
+    		<a href="javascript:sliderFunctions.next();" id="next" class="opacity1">Siguiente</a>
+    	</div>
+		
+		<div id="slider">
+			<div class="content">
+				<div class="block">
+					<h2>¡Bienvenido a FallApp!</h2>
+					<p class="smart topBorder">La aplicación que detecta tus caídas y pide ayuda justo cuando se necesita</p>
+					<p class="smart">¡Vamos a ver cómo funciona!</p>
+					<p id="nextMessage">Desliza o pulsa siguiente para continuar</p>
+				</div>
+			</div>
+			
+			<div class="content">
+				<div class="block left">
+					<p class="smart smallFont">FallApp monitorizará tus movimientos.</p>
+					<p class="smart smallFont">Si te caes, lo detectará automáticamente y mandará alertas mediante SMS.</p>
+					<p class="topMargin">Algunos consejos:</p>
+					<p class="smart smallFont topBorder">Lleva siempre el móvil contigo</p>
+					<p class="smart smallFont">Lleva el móvil en un bolsillo del pantalón, será más fácil detectar una caída</p>
+					<p class="smart smallFont">Activa el GPS. FallApp te permitirá hacerlo más adelante</p>
+					<p class="center topMargin">¡FallApp comenzará a funcionar en cuanto completes este asistente de configuración!</p>
+				</div>
+			</div>
+			
+			<div class="content">
+				<div class="block">
+					<p class="topMargin">¡Empecemos por lo básico!</p>
+					<p class="smart topBorder topMargin">¿Cómo te llamas? Introduce tu nombre a continuación:</p>
+					<input type="text" id="userName" class="inputBorder topMargin" name="serviceParameter" placeholder="Pulsa aquí para escribir tu nombre";/>
+					<div id="nameError" class="error notShow">
+						<div class="nameArrow"></div>
+						<div id="nameErrorText" class="errorText"></div>
+					</div>
+					<p class="note"><strong>Nota:</strong> no escribas caracteres especiales, comas, puntos o números. ¡Sólo letras o espacios!</p>
+				</div>
+			</div>
+			
+			<div class="content">
+				<div class="block">
+					<p class="topMargin">Introduce los números a los que quieres que se avise si te caes, aunque...</p>
+					<p class="smart topBorder">¡Mejor que no haga falta!</p>
+					<input type="tel" class="number inputBorder topMargin" maxlength="9"/>
+					<input type="tel" class="number inputBorder topMargin" maxlength="9"/>
+					<input type="tel" class="number inputBorder topMargin" maxlength="9"/>
+					<div id="telError" class="error notShow">
+						<div id="telErrorText" class="errorText"></div>
+					</div>
+					<p class="note"><strong>Nota:</strong> escribe sólo números.</p>
+				</div>
+
+				<a href="javascript:sliderFunctions.removeTelNumberBox();" class="numbersButton" id="leftButton">-</a>
+
+				<a href="javascript:sliderFunctions.addTelNumberBox();" class="numbersButton" id="rightButton">+</a>
+			</div>
+
+			<div class="content">
+				<div class="block">
+					<p>Puedes escoger lo sensible que es la aplicación a las caídas.</p>
+					<p class="smart topBorder topMargin">Para ello, desplaza la barra lateral:</p>
+					<input type="range" class="topMargin" step="25" min="0" max="100" onchange="sliderFunctions.updateRangeText(this.value)"/>
+					<p id="rangeValue" class="note"><strong>Valor 50:</strong> valor por defecto, el recomendado. ¡No lo toques si no sabes lo que haces!</p>
+				</div>
+			</div>
+			
+			<div class="content">
+				<div class="block">
+					<p class="topMargin">¡Ya hemos acabado!</p>
+					<p class="smart topBorder topMargin">Ahora usa el móvil con normalidad y despreocúpate.</p>
+					<p class="topMargin">¡FallApp se encargará de todo!</p>
+					<a href="javascript:sliderFunctions.finishConfiguration();" id="finish" class="topMargin">Terminar</a>
+				</div>
+			</div>
+		</div>
+
+		<div id="indicators">
+			<div class="indicator opacity1"></div>
+			<div class="indicator opacity01"></div>
+			<div class="indicator opacity01"></div>
+			<div class="indicator opacity01"></div>
+			<div class="indicator opacity01"></div>
+			<div class="indicator opacity01"></div>
+		</div>
+		
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript" src="js/fastclick.js"></script>
+		<script type="text/javascript" src="js/iscroll-lite.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

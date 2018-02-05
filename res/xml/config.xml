@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.example.fulltest" version="1.0.0">
+    <preference name="loglevel" value="DEBUG" />
+    <name>FallApp</name>
+    <description>
+        Aplicación Android que detecta caídas y envía alertas de forma automática.
+    </description>
+    <author email="UO226111@uniovi.es">
+        Marco Martínez Ávila
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+
+    <feature name="LinkToService">
+        <param name="android-package" value="com.example.fulltest.LinkToService" />
+    </feature>
+</widget>
